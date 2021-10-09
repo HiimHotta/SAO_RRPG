@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form name="frmMain" formType="sheetTemplate" dataType="Ambesek.Hotta.SAO" title="Plugin SAO" align="client" theme="dark" scale="1">
+    <tabControl align="client">
+        <tab title="Geral">
+            <import file="General.lfm"/>
+        </tab>
+        <tab title="Equipamentos">
+            <import file="Equipamentos.lfm"/>
+        </tab>
+        <tab title="Magias e Habilidades">
+            <import file="DetailList.lfm"/>
+        </tab>
+        <tab title="Animal">
+            <import file="Pet.xml"/>
+        </tab>
+        <tab title="Background">
+            <import file="Description.lfm"/>
+        </tab>
+        <tab title="Guilda">
+            <import file="Guild.lfm"/>
+        </tab>
+        <tab title="NPCs">
+            <import file="NPCs.lfm"/>
+        </tab>
+        <tab title="Quests">
+            <import file="Quest.lfm"/>
+        </tab>
+        <tab title="Biblioteca">
+            <import file="Library.lfm"/>
+        </tab>
+        <tab title="Anotações">
+            <import file="Notes.lfm"/>
+        </tab>
+		<tab title="Creditos">
+            <import file="Credits.lfm"/>
+        </tab>
+    </tabControl>
+</form>

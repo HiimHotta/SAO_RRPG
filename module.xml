@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module sdkVersion="3.5">
+	<id>Ambesek.Hotta.SAO</id>
+	<version>0.7</version>
+	<name>Plugin SAO/Ambesek</name>
+	<description>Ficha para um sistema proprio de SAO, usando ficha de Ambesek.</description>
+	<author>Ambese.Hotta</author>
+	<site/>
+	<contact></contact>
+</module>
