@@ -22,7 +22,7 @@
 		<layout align="top" height="25" margins="{top=5}">
 			<button text="$(text)" align="left" width="100" horzTextAlign="center">
 				<event name="onClick">
-					local firstValue = tonumber(sheet.firstValue) or -1;
+					local firstValue = tonumber(sheet.firstValue) or 0;
 					if (sheet.doubleRoll and firstValue &lt; 0) then
 						sheet.firstValue = tonumber(sheet.atr_$(field)Total) or 0;
 						sheet.firstValueName = "$(text)";
@@ -32,7 +32,7 @@
 					local atr = tonumber(sheet.atr_$(field)Total) or 0;
 					if (sheet.doubleRoll) then
 						 atr = atr + firstValue;
-						 sheet.firstValue = -1;
+						 sheet.firstValue = 0;
 					end;
 
 					local mesa = rrpg.getMesaDe(sheet);
@@ -49,6 +49,10 @@
 				        					elseif extra &lt; 0 then
 				        						msg = msg .. ", " .. extra .. " bônus.";
 				        					end;
+
+				        					local rolagem = rrpg.interpretarRolagem(dados .. "d20 + " .. extra .. " + " .. atr); 
+
+				        					mesa.activeChat:rolarDados(rolagem, msg);
 
                             end);
 
@@ -80,7 +84,7 @@
 		<layout width="1200" height="570">
 
 			<rectangle color="black" align="top" height="50" margins="{bottom=5}">
-				<UpperBar width="150" text="Nome" field="nome" fontSize="13"/>
+				<UpperBar width="300" text="Nome" field="nome" fontSize="13"/>
 
 				<rectangle align="left" width="50" color="black" strokeColor="white" strokeSize="1" margins="{right=5}">
 					<image align="client" field="classeIcon" editable="true" style="autoFit" margins="{left=2, right=2, top=2, bottom=2}">
@@ -92,11 +96,9 @@
 
 				<UpperBar width="100" text="Classe" field="classe" fontSize="13"/>
 				<UpperBar width="100" text="Especialização" field="especializacao" fontSize="13"/>
-				<UpperBar width="30" text="Nível" field="level" fontSize="13"/>
+				<UpperBar width="40" text="Nível" field="level" fontSize="13"/>
 				<UpperBar width="100" text="Experiência" field="exp" fontSize="13"/>
-				<UpperBar width="30" text="Job" field="job" fontSize="13"/>
-				<UpperBar width="150" text="Personalidade" field="personalidade" fontSize="13"/>
-				<UpperBar width="100" text="Aparência" field="aparencia" fontSize="13"/>
+				<UpperBar width="150" text="Job" field="job" fontSize="13"/>
 			</rectangle>
 
 			<rectangle color="black" align="top" height="305" margins="{bottom=5}">
@@ -210,16 +212,10 @@
 
 							<edit top="20" field="bonus_esquiva" width="50" height="25"/>
 						</layout>
-						<UpperBar width="45" text="Força" field="bonus_forca" fontSize="12"/>
-						<UpperBar width="50" text="Destreza" field="bonus_destreza" fontSize="11"/>
-						<UpperBar width="45" text="Dano" field="bonus_dano" fontSize="12"/>
-						<UpperBar width="60" text="Intensidade" field="bonus_intensidade" fontSize="11"/>
+						<UpperBar width="45" text="TESTE" field="bonus_forca" fontSize="12"/>						
 					</layout>
 
 					<layout align="top" height="175" margins="{bottom=5, top=5}">
-						<layout align="top" height="25" margins="{bottom=5}">
-							<LabelEditMid text="Constituição" field="def_corporal" fontSize="13"/>
-						</layout>
 						<layout align="top" height="25" margins="{bottom=5}">
 							<LabelEditMid text="Def. Equipamento" field="def_equipamento" fontSize="11"/>
 						</layout>
@@ -260,9 +256,6 @@
 							<LabelEditMid text="Esquiva Perfeita" field="esquiva_perfeita" fontSize="13"/>
 						</layout>
 						<layout align="top" height="25" margins="{bottom=5}">
-							<LabelEditMid text="Turnos de Magia" field="tunos_magia" fontSize="13"/>
-						</layout>
-						<layout align="top" height="25" margins="{bottom=5}">
 							<LabelEditMid text="Resiliência" field="dma" fontSize="13"/>
 						</layout>
 						<layout align="top" height="25" margins="{bottom=5}">
@@ -285,15 +278,15 @@
 
 			<rectangle color="black" align="top" height="200" margins="{bottom=5}">
 				<layout align="left" width="500" margins="{right=5}">
-					<label text="VANTAGENS" align="top" height="25" horzTextAlign="center"/>
+					<label text="DESCRIÇÃO FÍSICA" align="top" height="25" horzTextAlign="center"/>
 					<textEditor align="top" height="165" field="vantagens"/>
 				</layout>
 				<layout align="left" width="500" margins="{right=5}">
-					<label text="DESVANTAGENS" align="top" height="25" horzTextAlign="center"/>
+					<label text="DESCRIÇÃO MENTAL/PERSONALIDADE" align="top" height="25" horzTextAlign="center"/>
 					<textEditor align="top" height="165" field="desvantagens"/>
 				</layout>
 
-				<image left="1010" top="25" width="190" height="116" style="autoFit" src="images/ragnarok_b.jpg"/>
+				<image left="1010" top="25" width="190" height="116" style="autoFit" src="images/sao_b.jpg"/>
 							</rectangle>
 
 		</layout>

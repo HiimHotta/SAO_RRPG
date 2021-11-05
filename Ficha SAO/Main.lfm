@@ -7,7 +7,7 @@
         <tab title="Equipamentos">
             <import file="Equipamentos.lfm"/>
         </tab>
-        <tab title="Magias e Habilidades">
+        <tab title="Habilidades e Perícias">
             <import file="DetailList.lfm"/>
         </tab>
         <tab title="Animal">

@@ -1,0 +1,6 @@
+
+<form name="frmNotes" align="client">
+	<scrollBox align="client">
+		<richEdit align="client" field="Notes" backgroundColor="#333333" defaultFontSize="12" defaultFontColor="white"/>
+	</scrollBox>
+</form>

@@ -101,7 +101,7 @@ local function constructNew_frmTemplateCreditos()
     obj.image3:setWidth(250);
     obj.image3:setHeight(250);
     obj.image3:setStyle("autoFit");
-    obj.image3:setSRC("/Ficha Ragnarock/images/RPGmeister.jpg");
+    obj.image3:setSRC("/Ficha SAO/images/RPGmeister.jpg");
     obj.image3:setName("image3");
 
     obj.layout1 = GUI.fromHandle(_obj_newObject("layout"));
